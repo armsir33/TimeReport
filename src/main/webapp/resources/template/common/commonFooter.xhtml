@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+	<link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Tangerine" />
+</h:head>
+<h:body>
+	<ui:composition>
+
+		<div id="iconsets">
+			<h:form>
+				<p:commandLink id="iconEmail">
+					<h:graphicImage value="/resources/images/email.png"/>
+				</p:commandLink>
+				<p:tooltip for="iconEmail" value="Email" />
+				<p:spacer width="20px"/>
+				<p:commandLink id="iconLinkedin">
+					<h:graphicImage value="/resources/images/linkedin.png" />
+				</p:commandLink>
+				<p:tooltip for="iconLinkedin" value="Linkedin" />
+				<p:spacer width="20px"/>
+				<p:commandLink id="iconFacebook">
+					<h:graphicImage value="/resources/images/facebook.png" />
+				</p:commandLink>
+				<p:tooltip for="iconFacebook" value="Facebook" />
+				<p:spacer width="20px"/>
+				<p:commandLink id="iconGoogle">
+					<h:graphicImage value="/resources/images/google+.png" />
+				</p:commandLink>
+				<p:tooltip for="iconGoogle" value="Google+" />
+			</h:form>
+		</div>
+		
+		<div id="copyrights">
+			<h:outputText value="Copyright &copy; 2015 Ze Ni. Free distribution." />
+		</div>
+
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,58 @@
+#page {
+	font-family: 'Tangerine', serif;
+	font-size: 24px;
+}
+
+#header {
+	width: 100%;
+	height: 200px;
+	padding: 1px;
+	background-image: url("#{resource['images:header.png']}");
+	/* text-align: center; */
+	color: red;
+	margin-bottom: 20px;
+}
+
+#logo {
+	margin-left: 20px;
+	padding: 70px 0 0 0;
+	overflow: hidden;
+	background-image: url("#{resource['images:logo.png']}");
+	background-repeat: no-repeat;
+	/* height: 100px !important; */
+	background-size: contain;
+}
+
+#content {
+	width: 50%;
+	height: 500px;
+	margin-right: 16px;
+	padding: 1px;
+	/* border: 1px solid #000; */
+	margin: 0 auto;
+	/* background-color: #D3D3D3; */
+}
+
+#loginPanel {
+	background-color: #D3D3D3;
+	color: gray;
+}
+
+#footer {
+	width: 100%;
+	height: 200px;
+	padding: 1px;
+	background-image: url("#{resource['images:footer.png']}");
+}
+
+#footer #iconsets {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#footer #copyrights {
+	margin-top: 20px;
+	text-align: center;
+	color: white;
+	font: bold;
+}

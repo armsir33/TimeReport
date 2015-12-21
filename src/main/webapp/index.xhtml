@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine" />
+</h:head>
+<h:body>
+
+	<ui:composition
+		template="/resources/template/common/commonLayout.xhtml">
+		<ui:define name="header">
+			Time Report System
+		</ui:define>
+		<ui:define name="content">
+			<h:form>
+				<p:panel id="loginPanel" header="Sign In">
+
+					<p:messages id="msgs" />
+
+					<h:panelGrid columns="3" cellpadding="5">
+						<p:outputLabel for="username" value="Username:" />
+						<p:inputText id="username" value="#{loginBean.username}"
+							required="true" label="Username">
+							<f:validateLength minimum="2" />
+						</p:inputText>
+						<p:message for="username" display="icon" />
+
+						<p:outputLabel for="password" value="Password:" />
+						<p:password id="password" value="#{loginBean.password}"
+							label="Password" required="true">
+							<f:validateLength minimum="2" />
+						</p:password>
+						<p:message for="password" display="icon" />
+
+					</h:panelGrid>
+
+					<p:commandButton value="Login" update="loginPanel"
+						actionListener="#{loginBean.login}" icon="ui-icon-check" />
+				</p:panel>
+				
+				<p:separator />
+			</h:form>
+			<h:form>
+				<p:panel id="registerPanel" header="Sign Up">
+					<p:outputLabel for="register" value="New Customer?" />
+					<p:spacer width="5" height="1" />
+					<p:commandLink id="register" value="Register" action="#{navigationBean.showRegisterPage()}" />
+				</p:panel>
+			</h:form>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>
