@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+
+<h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+	<link rel="stylesheet" type="text/css"
+		href="http://fonts.googleapis.com/css?family=Tangerine" />
+</h:head>
+<body>
+	<ui:composition
+		template="/resources/template/common/commonLayout.xhtml">
+		<ui:define name="header">
+			Time Report System
+		</ui:define>
+		<ui:define name="content">
+			<form name="f" method="post" >
+				 <p:panel id="loginPanel" header="Sign In">
+					<h:panelGrid columns="3" cellpadding="5">
+						<p:outputLabel for="username" value="Username:" />
+						<p:inputText id="username" value="username" required="true"
+							label="Username">
+							<f:validateLength minimum="2" />
+						</p:inputText>
+						<p:message for="username" display="icon" />
+
+						<p:outputLabel for="password" value="Password:" />
+						<p:password id="password" name="password" label="Password"
+							required="true">
+							<f:validateLength minimum="2" />
+						</p:password>
+					</h:panelGrid>
+					<h:commandButton action="#{loginBean.login}" value="Login" />
+				</p:panel> 
+			</form>
+			<p:separator />
+			<form>
+				<p:panel id="registerRedirectPanel" header="Sign Up">
+					<p:outputLabel value="New Customer?" />
+					<p:spacer width="5" height="1" />
+					<a href="register.xhtml">Register</a>
+				</p:panel>
+			</form>
+		</ui:define>
+
+	</ui:composition>
+</body>
+</html>

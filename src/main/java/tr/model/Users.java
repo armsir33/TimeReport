@@ -1,9 +1,12 @@
 package tr.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import tr.commons.BaseEntity;
-import tr.commons.Role;
 
 @Entity
 public class Users extends BaseEntity {
@@ -14,11 +17,15 @@ public class Users extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
+	@NotNull
 	private String username;
+	private String password;
 	private String email;
-	private Role role;
-	private String status;
+	private boolean enabled;
 
+	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch=FetchType.EAGER, orphanRemoval = true)
+	private UserRoles userRoles;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -51,20 +58,28 @@ public class Users extends BaseEntity {
 		this.email = email;
 	}
 
-	public Role getRole() {
-		return role;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public UserRoles getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(UserRoles userRoles) {
+		this.userRoles = userRoles;
 	}
 
 }

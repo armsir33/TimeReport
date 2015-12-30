@@ -19,9 +19,7 @@
 		<ui:define name="content">
 			<h:form>
 				<p:panel id="registerPanel" header="Sign Up">
-
 					<p:messages id="msgs" />
-
 					<h:panelGrid columns="3" cellpadding="5">
 						<p:outputLabel for="username" value="Username:" />
 						<p:inputText id="username" value="#{registerBean.username}"
@@ -61,6 +59,7 @@
 
 					<p:commandButton value="Register" update="registerPanel"
 						actionListener="#{registerBean.register}" icon="ui-icon-check" />
+
 				</p:panel>
 			</h:form>
 		</ui:define>

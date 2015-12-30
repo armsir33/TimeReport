@@ -35,7 +35,10 @@
 
 #loginPanel {
 	background-color: #D3D3D3;
-	color: gray;
+}
+
+#registerPanel {
+	background-color: #D3D3D3;
 }
 
 #footer {
@@ -55,4 +58,14 @@
 	text-align: center;
 	color: white;
 	font: bold;
+}
+
+input[type="submit"] {
+    margin: 10px;
+    /* padding:5px; */
+    padding-right:20px;
+    font-size: 30px;
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    border: 1px solid #900;
 }
