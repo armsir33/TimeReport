@@ -1,11 +1,11 @@
 package tr.model;
 
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-
 import tr.commons.BaseEntity;
 
 @Entity
@@ -23,9 +23,9 @@ public class Users extends BaseEntity {
 	private String email;
 	private boolean enabled;
 
-	@OneToOne(cascade = CascadeType.ALL, optional = false, fetch=FetchType.EAGER, orphanRemoval = true)
-	private UserRoles userRoles;
-	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private Set<UserRoles> userRolesSet;
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -74,12 +74,12 @@ public class Users extends BaseEntity {
 		this.password = password;
 	}
 
-	public UserRoles getUserRoles() {
-		return userRoles;
+	public Set<UserRoles> getUserRolesSet() {
+		return userRolesSet;
 	}
 
-	public void setUserRoles(UserRoles userRoles) {
-		this.userRoles = userRoles;
+	public void setUserRolesSet(Set<UserRoles> userRolesSet) {
+		this.userRolesSet = userRolesSet;
 	}
 
 }

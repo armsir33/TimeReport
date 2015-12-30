@@ -1,6 +1,8 @@
 package tr.dao;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Query;
 
@@ -50,7 +52,9 @@ public class UserDaoImpl extends GenericJpaDao<Users, Long> implements UserDao {
 		UserRoles userRoles = new UserRoles();
 		userRoles.setRole("ROLE_USER");
 		userRoles.setUsername(username);
-		user.setUserRoles(userRoles);
+		Set<UserRoles> userRolesSet = new HashSet<UserRoles>();
+		userRolesSet.add(userRoles);
+		user.setUserRolesSet(userRolesSet);
 		save(user);
 	}
 
